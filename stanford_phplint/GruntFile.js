@@ -49,13 +49,16 @@ module.exports = function(grunt) {
         }
       },
     },
-    jshint: {
+    phplint: {
       options: {
-        curly: true,
-        eqeqeq: true
+        phpCmd: "/usr/bin/php",
+        phpArgs: {
+                "-l": null
+        },
+        spawnLimit: 10
       },
-      tests: ['Gruntfile.js', 'src/js/**/*.php'],
-      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %>'],    
+      good: ["<%= build.webserver_root %><%= build.dest %><%= build.path %>/**/*.php"],
+      bad: ["test/rsrc/*-fail.php"]    
     }
   };
 
@@ -68,11 +71,11 @@ module.exports = function(grunt) {
   // Init the Config.
   grunt.initConfig(masterConfig);
   
-  grunt.registerTask('lint-my-site', 'Lint the js in designated path.', function() {
+  grunt.registerTask('lint-my-site', 'Lint the php in designated path.', function() {
     
     grunt.config("defaults", defaults);
     grunt.task.run("prompt:");
-    grunt.task.run("jshint:build");
+    grunt.task.run("phplint:good");
   });
 
 };
