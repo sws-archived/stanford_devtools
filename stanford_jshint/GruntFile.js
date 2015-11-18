@@ -35,6 +35,19 @@ module.exports = function(grunt) {
           ]
         }
       },
+      path: {
+        options: {
+          questions: [
+            {
+              config: 'build.path',
+              type: 'list',
+              message: "What type of build do you want?",
+              default: '/sites/all/modules/stanford',
+              choices: getPaths()
+            }
+          ]
+        }
+      },
     },
     jshint: {
       options: {
@@ -42,7 +55,7 @@ module.exports = function(grunt) {
         eqeqeq: true
       },
       tests: ['Gruntfile.js', 'src/js/**/*.js'],
-      build: ['<%= build.webserver_root %><%= build.dest %>'],    
+      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %>'],    
     }
   };
 
@@ -63,3 +76,10 @@ module.exports = function(grunt) {
   });
 
 };
+
+function getPaths() {
+    return [
+      '/sites/all/modules/stanford',
+      '/sites/default/modules/stanford',
+    ];
+  };
