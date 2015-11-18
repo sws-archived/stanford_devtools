@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             {
               config: 'build.path',
               type: 'list',
-              message: "What type of build do you want?",
+              message: "What path do you want to lint files on?",
               default: '/sites/all/modules/stanford',
               choices: getPaths()
             }
