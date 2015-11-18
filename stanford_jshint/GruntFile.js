@@ -54,8 +54,8 @@ module.exports = function(grunt) {
         curly: true,
         eqeqeq: true
       },
-      tests: ['Gruntfile.js', 'src/js/**/*.php'],
-      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %>'],    
+      tests: ['Gruntfile.js', 'src/js/**/*.js'],
+      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %>/**/*.js'],    
     }
   };
 
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
   // Init the Config.
   grunt.initConfig(masterConfig);
   
-  grunt.registerTask('lint-my-site', 'Lint the js in designated path.', function() {
+  grunt.registerTask('lint_site_js', 'Lint the js in designated path.', function() {
     
     grunt.config("defaults", defaults);
     grunt.task.run("prompt:");

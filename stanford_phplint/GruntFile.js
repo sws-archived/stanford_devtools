@@ -71,7 +71,7 @@ module.exports = function(grunt) {
   // Init the Config.
   grunt.initConfig(masterConfig);
   
-  grunt.registerTask('lint-my-site', 'Lint the php in designated path.', function() {
+  grunt.registerTask('lint_site_php', 'Lint the php in designated path.', function() {
     
     grunt.config("defaults", defaults);
     grunt.task.run("prompt:");
