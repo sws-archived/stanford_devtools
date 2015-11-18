@@ -45,3 +45,8 @@ Psuedo Code for configure.json
 }
 
 ```
+Usage
+
+For single task utililites such as stanford_jspint and stanford_phplint:
+
+Navigate into utility folder and enter: grunt
