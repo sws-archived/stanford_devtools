@@ -42,8 +42,20 @@ module.exports = function(grunt) {
               config: 'build.path',
               type: 'list',
               message: "What path do you want to lint files on?",
-              default: '/sites/all/modules/stanford',
+              default: '/sites/all/modules/stanford/',
               choices: getPaths()
+            }
+          ]
+        }
+      },
+      module: {
+        options: {
+          questions: [
+            {
+              config: 'build.module',
+              type: 'input',
+              message: "Is there a particular Module you would like to lint?",
+              default: ''
             }
           ]
         }
@@ -55,7 +67,7 @@ module.exports = function(grunt) {
         eqeqeq: true
       },
       tests: ['Gruntfile.js', 'src/js/**/*.js'],
-      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %>/**/*.js'],    
+      build: ['<%= build.webserver_root %><%= build.dest %><%= build.path %><%= build.module %>/**/*.js'],    
     }
   };
 
@@ -79,7 +91,7 @@ module.exports = function(grunt) {
 
 function getPaths() {
     return [
-      '/sites/all/modules/stanford',
-      '/sites/default/modules/stanford',
+      '/sites/all/modules/stanford/',
+      '/sites/default/modules/stanford/',
     ];
 };
