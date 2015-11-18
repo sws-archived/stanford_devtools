@@ -69,7 +69,9 @@ module.exports = function(grunt) {
         },
         spawnLimit: 10
       },
-      good: ["<%= build.webserver_root %><%= build.dest %><%= build.path %><%= build.module %>/**/*.php"],
+      php: ["<%= build.webserver_root %><%= build.dest %><%= build.path %><%= build.module %>/**/*.php"],
+      module: ["<%= build.webserver_root %><%= build.dest %><%= build.path %><%= build.module %>/**/*.module"],
+      inc: ["<%= build.webserver_root %><%= build.dest %><%= build.path %><%= build.module %>/**/*.inc"],
       bad: ["test/rsrc/*-fail.php"]    
     }
   };
@@ -87,7 +89,9 @@ module.exports = function(grunt) {
     
     grunt.config("defaults", defaults);
     grunt.task.run("prompt:");
-    grunt.task.run("phplint:good");
+    grunt.task.run("phplint:php");
+    grunt.task.run("phplint:module");
+    grunt.task.run("phplint:inc");
   });
 
 };
