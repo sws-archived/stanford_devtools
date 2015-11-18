@@ -80,12 +80,13 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task list
-  grunt.registerTask('default', ['availabletasks']);
+  //grunt.registerTask('default', ['availabletasks']);
 
   // Init the Config.
   grunt.initConfig(masterConfig);
   
-  grunt.registerTask('lint_site_php', 'Lint the php in designated path.', function() {
+  //grunt.registerTask('lint_site_php', 'Lint the php in designated path.', function() {
+  grunt.registerTask('default', 'Lint the php in designated path.', function() {
     
     grunt.config("defaults", defaults);
     grunt.task.run("prompt:");
