@@ -1,0 +1,16 @@
+{
+  "system": {
+    "drush": "/usr/local/bin/drush",
+    "php": "/usr/local/bin/php",
+    "mysql": "/usr/local/bin/mysql"
+  },
+  "build": {
+    "webserver_root": "/httpdocs/",
+    "environment": "local",
+    "dbtype": "mysql",
+    "dbwhere": "127.0.0.1",
+    "dbuser": "root",
+    "dbpass": "root",
+    "branch": "7.x-4.x"
+  }
+}
