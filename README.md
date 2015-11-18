@@ -1,4 +1,4 @@
-#[Stanford Geppetto](https://github.com/SU-SWS/stanford_devtools)
+#[Stanford Devtools](https://github.com/SU-SWS/stanford_devtools)
 ##### Version: 7.0.0-dev
 
 [boznik](https://github.com/boznik)
